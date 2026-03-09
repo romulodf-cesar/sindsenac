@@ -1,0 +1,41 @@
+/* 1. Reset: Tira as margens chatas que o navegador coloca sozinho */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. O Topo: Cor de fundo e altura */
+.topo-principal {
+    background-color: #004a8d; /* Um azul clássico de sindicato */
+    padding: 15px 0;
+    color: white;
+}
+
+/* 3. Container: Mantém o conteúdo no centro da tela e não espalhado */
+.container {
+    max-width: 1000px;
+    margin: 0 auto; /* Centraliza a caixa na tela */
+    display: flex; /* Mágica: Coloca logo e menu um ao lado do outro */
+    justify-content: space-between; /* Empurra o logo pra esquerda e menu pra direita */
+    align-items: center; /* Alinha os dois verticalmente no centro */
+}
+
+/* 4. Logo: Ajusta o tamanho da imagem */
+.logo {
+    height: 50px;
+}
+
+/* 5. Menu: Estiliza os links */
+.menu a {
+    color: white;
+    text-decoration: none; /* Tira aquele sublinhado azul de link antigo */
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* 6. Efeito: Quando passar o mouse, o link muda de cor */
+.menu a:hover {
+    color: #ffcc00; /* Muda para um amarelo dourado */
+}
