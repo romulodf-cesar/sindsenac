@@ -1,26 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SindApp - Gerenciando Associados com Tecnologia</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% extends 'associado/base.html' %}
 
-   
-    <header class="topo-principal">
-        <div class="container">
-            <img src="{% static 'assets/logo_preto_branco.png' %}" alt="Logo SindApp" width="15%">
-            <nav class="menu">
-                <a href="#">Início</a>
-                <a href="#">Benefícios</a>
-                <a href="#">Carteirinha</a>
-            </nav>
-        </div>
-    </header>
+{% block content %}
+     
+   Bem Vindo, ao SindApp!
 
-    
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load static %}
+<header class="topo-principal">
+    <div class="container">
+        <img src="{% static 'assets/logo_preto_branco.png' %}" alt="Logo SindApp" width="15%">
+        <nav class="menu">
+            <a href="{% url 'index' %}">Início</a>
+            <a href="#">Benefícios</a>
+            <a href="#">Carteirinha</a>
+            <a href="{% url 'perfil' %}">Perfil</a>
+        </nav>
+    </div>
+</header>

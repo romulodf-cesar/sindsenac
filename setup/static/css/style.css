@@ -39,3 +39,28 @@
 .menu a:hover {
     color: #ffcc00; /* Muda para um amarelo dourado */
 }
+
+/* Estilo para o Rodapé */
+.rodape-principal {
+    background-color: #f8f9fa; /* Um cinza bem clarinho para diferenciar do corpo */
+    border-top: 2px solid #004a8d; /* Uma linha azul fina no topo para combinar com o header */
+    padding: 20px 0;
+    margin-top: 50px; /* Garante que o rodapé não fique colado no conteúdo */
+    color: #555; /* Cor do texto um pouco mais suave que o preto */
+    font-size: 0.9rem;
+}
+
+/* Container do Rodapé para alinhar os itens */
+.container-rodape {
+    max-width: 1100px; /* Alinhado com o resto do seu site */
+    margin: 0 auto;
+    display: flex; /* Mágica do alinhamento */
+    justify-content: space-between; /* Um pra cada lado */
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Destaque para a palavra Django */
+.container-rodape strong {
+    color: #004a8d;
+}
