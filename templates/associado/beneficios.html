@@ -1,0 +1,39 @@
+{% extends 'associado/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container-beneficios">
+    <div class="beneficios-header">
+        <h1>🎁 Clube de Vantagens SindApp</h1>
+        <p>Descontos e parcerias exclusivas para associados ativos.</p>
+    </div>
+
+    <div class="grid-beneficios">
+        
+        <div class="card-parceiro">
+            <div class="badge-desconto">30% OFF</div>
+            <div class="icon-parceiro">🏥</div>
+            <h3>Saúde Total</h3>
+            <p>Consultas e exames laboratoriais com valores de tabela social.</p>
+            <a href="#" class="btn-detalhes">Ver Unidades</a>
+        </div>
+
+        <div class="card-parceiro">
+            <div class="badge-desconto">15% OFF</div>
+            <div class="icon-parceiro">⛽</div>
+            <h3>Postos Rede Flex</h3>
+            <p>Desconto direto na bomba em toda a rede credenciada do estado.</p>
+            <a href="#" class="btn-detalhes">Como Usar</a>
+        </div>
+
+        <div class="card-parceiro">
+            <div class="badge-desconto">GRÁTIS</div>
+            <div class="icon-parceiro">⚖️</div>
+            <h3>Assessoria Jurídica</h3>
+            <p>Atendimento especializado em causas trabalhistas e cíveis.</p>
+            <a href="#" class="btn-detalhes">Agendar Horário</a>
+        </div>
+
+    </div>
+</main>
+{% endblock %}

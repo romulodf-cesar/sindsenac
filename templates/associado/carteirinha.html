@@ -1,0 +1,77 @@
+{% extends 'associado/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pwa-container">
+    <nav class="pwa-nav">
+        <a href="{% url 'perfil' %}" class="pwa-back">✕ Fechar</a>
+        <span class="pwa-title">ID Digital</span>
+        <button class="pwa-share" onclick="window.print()">📥 PDF</button>
+    </header>
+
+    <div class="pwa-content">
+        <div class="card-3d-wrapper" onclick="this.classList.toggle('flipped')">
+            <div class="card-3d-inner">
+                
+                <div class="card-front">
+                    <div class="card-top">
+                        <img src="{% static 'assets/logo_sindapp_white.png' %}" class="card-logo" width="60">
+                        <div class="card-chip"></div> </div>
+                    
+                    <div class="card-middle">
+                        <div class="card-avatar-box">
+                            <img src="{% static 'assets/avatar_quadrado.png' %}" alt="Foto Sócio">
+                        </div>
+                        <div class="card-main-info">
+                            <label>ASSOCIADO</label>
+                            <h2>RICARDO OLIVEIRA</h2>
+                            <label>MATRÍCULA</label>
+                            <p class="txt-bold">#2026-001</p>
+                        </div>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div class="card-tag">SÓCIO EFETIVO</div>
+                        <div class="card-validity">VAL: 12/2026</div>
+                    </div>
+                    <div class="card-shimmer"></div>
+                </div>
+
+                <div class="card-back">
+                    <div class="back-header">VALIDAÇÃO DE SEGURANÇA</div>
+                    
+                    <div class="back-qr-area">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sindapp.com/validar/2026001" class="qr-img">
+                        <p class="qr-hash">Hash: 882.991.002-X</p>
+                    </div>
+
+                    <div class="back-footer">
+                        <p>Documento digital gerado em:</p>
+                        <span id="pwa-timestamp" class="timestamp">--/--/---- --:--</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="pwa-hint">Toque no cartão para girar e ver o QR Code</p>
+
+        <section class="pwa-partners">
+            <h3>🛍️ Novos Parceiros Adicionados</h3>
+            <div class="partners-scroll">
+                <div class="partner-item">🏥 Saúde+</div>
+                <div class="partner-item">⛽ FlexGas</div>
+                <div class="partner-item">📚 Educar</div>
+                <div class="partner-item">🏋️ FitUp</div>
+                <div class="partner-item">🍕 PizzaClub</div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    // Atualiza o timestamp para dar veracidade ao documento
+    const now = new Date();
+    document.getElementById('pwa-timestamp').innerText = now.toLocaleString('pt-BR');
+</script>
+{% endblock %}

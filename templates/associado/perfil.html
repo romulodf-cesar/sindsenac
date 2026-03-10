@@ -1,0 +1,91 @@
+{% extends 'associado/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="perfil-container-master">
+    <header class="perfil-header-nav">
+        <a href="{% url 'index' %}" class="btn-voltar-index">
+            <span class="icon">←</span> Voltar ao Painel Geral
+        </a>
+    </header>
+
+    <div class="perfil-grid-principal">
+        
+        <aside class="perfil-col-identidade">
+            <div class="cartao-foto-perfil">
+                <div class="moldura-foto">
+                    <img src="{% static 'assets/avatar_grande.png' %}" alt="Sócio">
+                </div>
+                <div class="badge-status-flutuante">Sócio Ativo</div>
+                
+                <h1 class="nome-destaque">Ricardo Oliveira</h1>
+                <p class="txt-sub">Membro desde Janeiro de 2020</p>
+                
+                <div class="grupo-botoes-laterais">
+                    <button class="btn-perfil-acao principal">📄 Imprimir Carteirinha</button>
+                    <button class="btn-perfil-acao secundario">⚙️ Editar Cadastro</button>
+                </div>
+            </div>
+        </aside>
+
+        <section class="perfil-col-dados">
+            
+            <div class="bloco-info-perfil">
+                <h2 class="titulo-sessao">Dados Cadastrais</h2>
+                <div class="grid-detalhes-perfil">
+                    <div class="dado-box">
+                        <label>CPF</label>
+                        <p>123.456.789-00</p>
+                    </div>
+                    <div class="dado-box">
+                        <label>Matrícula</label>
+                        <p>#2026-001</p>
+                    </div>
+                    <div class="dado-box">
+                        <label>E-mail Corporativo</label>
+                        <p>ricardo@sindapp.com.br</p>
+                    </div>
+                    <div class="dado-box">
+                        <label>Telefone para Contato</label>
+                        <p>(31) 98877-6655</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloco-info-perfil">
+                <h2 class="titulo-sessao">Carteirinha Digital</h2>
+                <div class="area-documento-digital">
+                    <div class="carteirinha-v2">
+                        <div class="c2-topo">
+                            <img src="{% static 'assets/logo_preto_branco.png' %}" width="80" class="logo-c2">
+                            <div class="selo-c2">DOCUMENTO DIGITAL</div>
+                        </div>
+                        
+                        <div class="c2-corpo">
+                            <div class="c2-foto">
+                                <img src="{% static 'assets/avatar_pequeno.png' %}">
+                            </div>
+                            <div class="c2-info">
+                                <div class="c2-campo">
+                                    <label>NOME COMPLETO</label>
+                                    <p>RICARDO OLIVEIRA</p>
+                                </div>
+                                <div class="c2-campo">
+                                    <label>CATEGORIA</label>
+                                    <p>Sócio Efetivo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c2-rodape">
+                            <span>SINDAPP - SINDICATO DOS ASSOCIADOS</span>
+                            <span class="c2-validade">VALIDADE: 12/2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+{% endblock %}
