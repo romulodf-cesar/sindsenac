@@ -2,76 +2,76 @@
 {% load static %}
 
 {% block content %}
-<div class="pwa-container">
-    <nav class="pwa-nav">
-        <a href="{% url 'perfil' %}" class="pwa-back">✕ Fechar</a>
-        <span class="pwa-title">ID Digital</span>
-        <button class="pwa-share" onclick="window.print()">📥 PDF</button>
-    </header>
+<div class="pwa-wrapper">
+    <div class="mobile-actions-bar">
+        <a href="{% url 'perfil' %}" class="pwa-btn">✕</a>
+        <span class="pwa-status">ID DIGITAL</span>
+        <button class="pwa-btn" onclick="window.print()">📥</button>
+    </div>
 
-    <div class="pwa-content">
-        <div class="card-3d-wrapper" onclick="this.classList.toggle('flipped')">
-            <div class="card-3d-inner">
-                
-                <div class="card-front">
-                    <div class="card-top">
-                        <img src="{% static 'assets/logo_sindapp_white.png' %}" class="card-logo" width="60">
-                        <div class="card-chip"></div> </div>
-                    
-                    <div class="card-middle">
-                        <div class="card-avatar-box">
-                            <img src="{% static 'assets/avatar_quadrado.png' %}" alt="Foto Sócio">
+    <div class="carteirinha-layout-grid">
+        
+        <section class="secao-cartao">
+            <div class="container-3d" onclick="this.classList.toggle('flipped')">
+                <div class="cartao-inner">
+                    <div class="face frente">
+                        <div class="f-top">
+                            <img src="{% static 'assets/logo_sindapp_white.png' %}" width="60">
+                            <div class="chip-digital"></div>
                         </div>
-                        <div class="card-main-info">
-                            <label>ASSOCIADO</label>
-                            <h2>RICARDO OLIVEIRA</h2>
-                            <label>MATRÍCULA</label>
-                            <p class="txt-bold">#2026-001</p>
+                        <div class="f-mid">
+                            <div class="f-foto">
+                                <img src="{% static 'assets/avatar_quadrado.png' %}">
+                            </div>
+                            <div class="f-info">
+                                <label>ASSOCIADO</label>
+                                <h2>RICARDO OLIVEIRA</h2>
+                                <label>MATRÍCULA</label>
+                                <p>#2026-001</p>
+                            </div>
+                        </div>
+                        <div class="f-bottom">
+                            <span class="badge">SÓCIO EFETIVO</span>
+                            <span class="validade">VAL: 12/2026</span>
+                        </div>
+                        <div class="holograma"></div>
+                    </div>
+
+                    <div class="face verso">
+                        <div class="v-header">AUTENTICAÇÃO SINDAPP</div>
+                        <div class="v-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://sindapp.com/v/2026001">
+                            <p class="hash">AUT: 882.991-X</p>
+                        </div>
+                        <div class="v-footer">
+                            <p>Documento gerado em:</p>
+                            <b id="pwa-clock">--/--/---- 00:00</b>
                         </div>
                     </div>
-
-                    <div class="card-bottom">
-                        <div class="card-tag">SÓCIO EFETIVO</div>
-                        <div class="card-validity">VAL: 12/2026</div>
-                    </div>
-                    <div class="card-shimmer"></div>
                 </div>
-
-                <div class="card-back">
-                    <div class="back-header">VALIDAÇÃO DE SEGURANÇA</div>
-                    
-                    <div class="back-qr-area">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sindapp.com/validar/2026001" class="qr-img">
-                        <p class="qr-hash">Hash: 882.991.002-X</p>
-                    </div>
-
-                    <div class="back-footer">
-                        <p>Documento digital gerado em:</p>
-                        <span id="pwa-timestamp" class="timestamp">--/--/---- --:--</span>
-                    </div>
-                </div>
-
             </div>
-        </div>
-
-        <p class="pwa-hint">Toque no cartão para girar e ver o QR Code</p>
-
-        <section class="pwa-partners">
-            <h3>🛍️ Novos Parceiros Adicionados</h3>
-            <div class="partners-scroll">
-                <div class="partner-item">🏥 Saúde+</div>
-                <div class="partner-item">⛽ FlexGas</div>
-                <div class="partner-item">📚 Educar</div>
-                <div class="partner-item">🏋️ FitUp</div>
-                <div class="partner-item">🍕 PizzaClub</div>
-            </div>
+            <p class="instrucao">Toque para girar o cartão</p>
         </section>
+
+        <aside class="secao-extras">
+            <div class="pwa-card">
+                <h3>📜 Termos de Uso</h3>
+                <p>Este documento é pessoal e intransferível, válido mediante apresentação de documento com foto.</p>
+            </div>
+
+            <div class="pwa-card">
+                <h3>🎁 Novos Parceiros</h3>
+                <div class="parceiros-lista">
+                    <div class="p-item">🏥 Saúde+</div>
+                    <div class="p-item">⛽ FlexGas</div>
+                    <div class="p-item">📚 Educar</div>
+                </div>
+            </div>
+        </aside>
     </div>
 </div>
 
 <script>
-    // Atualiza o timestamp para dar veracidade ao documento
-    const now = new Date();
-    document.getElementById('pwa-timestamp').innerText = now.toLocaleString('pt-BR');
+    document.getElementById('pwa-clock').innerText = new Date().toLocaleString('pt-BR');
 </script>
 {% endblock %}

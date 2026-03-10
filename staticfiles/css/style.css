@@ -404,3 +404,159 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* Layout PWA */
+.pwa-container { background: #f0f2f5; min-height: 100vh; font-family: sans-serif; }
+.pwa-nav { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 15px 20px; background: white; border-bottom: 1px solid #ddd;
+}
+.pwa-title { font-weight: bold; color: #004a8d; text-transform: uppercase; letter-spacing: 1px; }
+.pwa-back, .pwa-share { border: none; background: none; color: #004a8d; font-weight: bold; text-decoration: none; cursor: pointer; }
+
+/* Estilo do Card 3D */
+.card-3d-wrapper { perspective: 1000px; width: 340px; height: 215px; margin: 30px auto; }
+.card-3d-inner { 
+    position: relative; width: 100%; height: 100%; 
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; 
+}
+.card-3d-wrapper.flipped .card-3d-inner { transform: rotateY(180deg); }
+
+.card-front, .card-back { 
+    position: absolute; width: 100%; height: 100%; 
+    backface-visibility: hidden; border-radius: 15px; padding: 20px;
+}
+
+/* FRENTE */
+.card-front { 
+    background: linear-gradient(135deg, #004a8d 0%, #002d5a 100%); color: white;
+    display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
+}
+.card-shimmer {
+    position: absolute; top: 0; left: -150%; width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 4s infinite;
+}
+@keyframes shimmer { 100% { left: 150%; } }
+
+.card-middle { display: flex; gap: 15px; align-items: center; margin-top: 10px; }
+.card-avatar-box img { width: 85px; height: 85px; border-radius: 10px; border: 2px solid white; object-fit: cover; }
+.card-main-info label { font-size: 0.6rem; opacity: 0.7; display: block; margin-top: 5px; }
+.card-main-info h2 { font-size: 1rem; margin: 0; }
+
+.card-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; }
+.card-tag { background: #28a745; padding: 4px 10px; border-radius: 4px; font-weight: bold; }
+
+/* VERSO */
+.card-back { 
+    background: white; color: #333; transform: rotateY(180deg); 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 1px solid #ccc;
+}
+.back-header { font-size: 0.7rem; font-weight: bold; color: #004a8d; margin-bottom: 10px; }
+.qr-img { border: 5px solid #f8f9fa; border-radius: 8px; }
+.qr-hash { font-family: monospace; font-size: 0.7rem; color: #888; margin-top: 5px; }
+
+/* Parceiros Estilo App */
+.pwa-partners { padding: 20px; text-align: left; }
+.partners-scroll { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; }
+.partner-item { 
+    flex: 0 0 auto; background: white; padding: 15px; border-radius: 12px; 
+    border: 1px solid #eee; font-weight: bold; font-size: 0.85rem; color: #004a8d;
+}
+
+/* --- ESTILO BASE (MOBILE FIRST - ANDROID/iOS) --- */
+.pwa-wrapper {
+    background: #f4f7f9;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.mobile-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.pwa-btn { border: none; background: none; font-size: 1.2rem; color: #004a8d; text-decoration: none; cursor: pointer; }
+.pwa-status { font-weight: 800; color: #004a8d; letter-spacing: 1px; font-size: 0.9rem; }
+
+/* Grid de Layout */
+.carteirinha-layout-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* O Cartão 3D */
+.container-3d {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 380px;
+    height: 230px;
+    margin: 20px auto;
+}
+
+.cartao-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.container-3d.flipped .cartao-inner { transform: rotateY(180deg); }
+
+.face {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; border-radius: 18px; padding: 20px;
+    box-shadow: 0 15px 35px rgba(0,74,141,0.2);
+}
+
+.frente { background: linear-gradient(135deg, #004a8d, #002d5a); color: white; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.verso { background: white; color: #333; transform: rotateY(180deg); border: 1px solid #ddd; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+
+.f-mid { display: flex; gap: 15px; align-items: center; }
+.f-foto img { width: 85px; height: 85px; border-radius: 12px; border: 2px solid white; object-fit: cover; }
+.f-info h2 { font-size: 1.1rem; margin: 0; }
+.f-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+
+.holograma {
+    position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-20deg); animation: holo 5s infinite;
+}
+@keyframes holo { 100% { left: 200%; } }
+
+/* --- VERSÃO WEB (DESKTOP) --- */
+@media (min-width: 992px) {
+    .mobile-actions-bar { display: none; } /* Esconde barra mobile */
+    
+    .carteirinha-layout-grid {
+        flex-direction: row; /* Coloca lado a lado */
+        gap: 50px;
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    }
+
+    .secao-cartao { flex: 1; }
+    .secao-extras { flex: 0 0 350px; display: block; }
+    
+    .pwa-card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .container-3d { margin: 0; max-width: 450px; height: 270px; }
+}
+
+/* Esconde extras no mobile por padrão */
+@media (max-width: 991px) {
+    .secao-extras { display: none; }
+}
