@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Associado
 
 
 def index(request):
     # criar dados mock do associado: ID, Nome, Status (Ativo/Inativo)
     # criar um dicionário para representar o associado
+    """
     associados = [
         {'id': '001', 'nome': 'Romulo Jackson', 'status': 'Ativo'},
         {'id': '002', 'nome': 'David Quilan', 'status': 'Ativo'},
@@ -20,6 +22,8 @@ def index(request):
         {'id': '012', 'nome': 'Dennis Jonhson', 'status': 'Inativo'},
     ]
         
+    """
+    associados = Associado.objects.all()
     # O Django buscará automaticamente dentro da pasta templates/
     return render(request, 'associado/index.html', {'lista_associados': associados})
 # Função para carregar o perfil do associado
